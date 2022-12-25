@@ -10,7 +10,13 @@ export default defineNuxtConfig({
     height: 500,
     // disabled: true, // Disable editor
     config: {
-      // toolbar: ['bold', 'italic', 'undo', 'redo']
+      // toolbar: ['code-block'],
+      codeBlock: {
+        languages: [
+          { language: 'css', label: 'CSS' },
+          { language: 'html', label: 'HTML' }
+        ]
+      }
     }
   }
 })

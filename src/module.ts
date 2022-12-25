@@ -1,19 +1,14 @@
 import { fileURLToPath } from 'url'
-import { defineNuxtModule, addPlugin, createResolver, addTemplate, addComponent, addComponentsDir } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 import consola from 'consola'
 import defu from 'defu'
-// import svgLoader from 'vite-svg-loader'
-// import XMLLoader from 'vite-plugin-xml-loader'
 
-// import { CKEditorTranslationsPlugin } from '@ckeditor/ckeditor5-dev-translations'
-// import { styles } from  '@ckeditor/ckeditor5-dev-utils'
-import { ckOptions } from './vue.config'
 const logger = consola.withScope('nuxt:ckeditor')
+
 export interface ModuleOptions {
   disabledModule: boolean,
   height: number,
   disabled: boolean,
-  editor: 'inline' | 'balloon' | 'balloon-block' | 'document' | 'classic',
   config: object
 }
 
@@ -21,7 +16,6 @@ const defaults:ModuleOptions = {
   disabledModule: false,
   height: 300,
   disabled: false,
-  editor: 'classic',
   config: {}
 }
 
@@ -41,7 +35,7 @@ export default defineNuxtModule<ModuleOptions>({
         defaults
       })
 
-      const component = resolve(runtimeDir, 'components/CKEditor.vue')
+      // const component = resolve(runtimeDir, 'components/CKEditor.vue')
 
       // Configure config
       nuxt.options.runtimeConfig.public = nuxt.options.runtimeConfig.public || {}
