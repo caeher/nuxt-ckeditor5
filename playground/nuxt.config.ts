@@ -3,6 +3,7 @@ import MyModule from '..'
 
 export default defineNuxtConfig({
   modules: [
+    // @ts-ignore
     MyModule
   ],
   ckeditor: {
@@ -11,12 +12,6 @@ export default defineNuxtConfig({
     // disabled: true, // Disable editor
     config: {
       // toolbar: ['code-block'],
-      codeBlock: {
-        languages: [
-          { language: 'css', label: 'CSS' },
-          { language: 'html', label: 'HTML' }
-        ]
-      }
     }
   }
 })
