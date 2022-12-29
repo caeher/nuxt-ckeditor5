@@ -1,7 +1,7 @@
 {
   "name": "@caeher/nuxt-ckeditor5",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.8",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -22,15 +22,9 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@blowstack/ckeditor5-full-free-build": "^27.0.1",
-    "@ckeditor/ckeditor5-build-balloon": "^35.4.0",
-    "@ckeditor/ckeditor5-build-balloon-block": "^35.4.0",
-    "@ckeditor/ckeditor5-build-classic": "^35.4.0",
-    "@ckeditor/ckeditor5-build-decoupled-document": "^35.4.0",
-    "@ckeditor/ckeditor5-build-inline": "^35.4.0",
+    "@caeher/build-ckeditor": "^0.0.11",
     "@ckeditor/ckeditor5-vue": "^4.0.1",
-    "@nuxt/kit": "^3.0.0",
-    "ckeditor5-build-full": "^25.0.0"
+    "@nuxt/kit": "^3.0.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.2.1",
@@ -39,9 +33,18 @@
     "eslint": "^8.29.0",
     "nuxt": "^3.0.0"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "public"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caeher/nuxt-ckeditor5.git"
   },
-  "repository": "https://github.com/caeher/nuxt-ckeditor5"
+  "description": "## Development",
+  "bugs": {
+    "url": "https://github.com/caeher/nuxt-ckeditor5/issues"
+  },
+  "homepage": "https://github.com/caeher/nuxt-ckeditor5#readme",
+  "keywords": [
+    "Nuxt",
+    "CKEditor"
+  ],
+  "author": "Cristian Antonio Escalante Hernandez"
 }
