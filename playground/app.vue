@@ -1,9 +1,7 @@
 <template>
   <div>
     <template v-if="isEditor">
-      <ClientOnly>
-        <Ckeditor v-model="data" editor="full" />
-      </ClientOnly>
+      <CaeherEditor v-model="data" />
     </template>
     {{ data }}
     <button @click="isEditor = !isEditor">
@@ -14,6 +12,8 @@
 
 <script setup>
 import { ref } from 'vue'
+import * as c from '#components'
+// console.log(c)
 const data = ref('')
 const isEditor = ref(true)
 </script>
