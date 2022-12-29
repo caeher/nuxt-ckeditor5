@@ -1,9 +1,5 @@
 import { fileURLToPath } from 'url'
-// import defu from 'defu'
-// import consola from 'consola'
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
-
-// const logger = consola.withScope('nuxt:ckeditor')
+import { defineNuxtModule, addPlugin, createResolver, addComponent } from '@nuxt/kit'
 
 export interface ModuleOptions {
   disabledModule: boolean,
@@ -21,36 +17,31 @@ const defaults: ModuleOptions = {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'my-module',
+    name: 'nuxt-ckeditor5',
     configKey: 'ckeditor'
   },
   defaults,
   setup (moduleOptions, nuxt) {
     if (!moduleOptions.disabledModule) {
-      // logger.info('Start to add module `nuxt-ckeditor`')
-
       const { resolve } = createResolver(import.meta.url)
       const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
 
       // Configure config
       nuxt.options.runtimeConfig.public = nuxt.options.runtimeConfig.public || {}
       // @ts-ignore
-      // nuxt.options.runtimeConfig.public.ckeditor = defu(moduleOptions, {
-      //   ...defaults
-      // })
       nuxt.options.runtimeConfig.public.ckeditor = {
-        ...moduleOptions,
-        ...defaults
+        ...defaults,
+        ...moduleOptions
       }
 
       nuxt.options.build.transpile.push(runtimeDir)
 
-      // Add plugin
-      addPlugin(resolve(runtimeDir, 'ckeditor.client'))
-
-      // logger.success('`nuxt-ckeditor` has added successfully')
-    } else {
-      // logger.info('`nuxt-ckeditor` is disabled')
+      addComponent({
+        filePath: resolve(runtimeDir, 'components/Caeher.vue'),
+        global: true,
+        name: 'CaeherEditor',
+        mode: 'client'
+      })
     }
   }
 })
