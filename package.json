@@ -1,7 +1,7 @@
 {
   "name": "@caeher/nuxt-ckeditor5",
   "private": false,
-  "version": "1.0.9",
+  "version": "1.0.10",
   "license": "MIT",
   "type": "module",
   "exports": {

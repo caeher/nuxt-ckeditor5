@@ -1,4 +1,4 @@
-# Unoficial CKEditor5 for Nuxt 3
+# CKEditor5 for Nuxt 3
 
 This module makes use of the official ckeditor component for vuejs, you can check [here](https://ckeditor.com/docs/ckeditor5/latest/installation/frameworks/vuejs-v3.html)
 
